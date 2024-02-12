@@ -1,11 +1,12 @@
 import sys
 
-def text_analyser(text = None):
+
+def text_analyser(text=None):
     if not text:
-       print("What is the text to count?")
-       for line in  sys.stdin:
-           text = line
-           break
+        print("What is the text to count?")
+        for line in sys.stdin:
+            text = line
+            break
     if not isinstance(text, str):
         print("ERROR (argument is not a string)")
         sys.exit()
@@ -32,19 +33,22 @@ def text_analyser(text = None):
     print(sp, " spaces")
     print(dg, " digits")
 
+
 def main():
-    """ Given a string as argument, count the number of upper letters, lower letters, 
-    punctuation marks, spaces and digits. If no string is provided, reads on stdin.
-    In this case the final endline will unfortunatly be counted. This behavior can
-    easily be avoided, but expected by the subject :(
-    Using assert for parsing in strongly advised AGAINST. assert should be used only
-    for debug. The subject disagree ;("""
+    """ Given a string as argument, count the number of upper letters, lower
+    letters, punctuation marks, spaces and digits. If no string is provided,
+    reads on stdin. In this case the final endline will unfortunatly be
+    counted. This behavior can easily be avoided, but expected by the subject
+    :( Using assert for parsing in strongly advised AGAINST. assert should be
+    used only for debug. The subject disagree ;("""
+
     assert len(sys.argv) < 3, "to many arguments"
 
     if len(sys.argv) == 1:
         text_analyser(None)
     else:
         text_analyser(sys.argv[1])
+
 
 if __name__ == "__main__":
     main()
