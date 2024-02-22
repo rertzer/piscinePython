@@ -35,19 +35,22 @@ def text_analyser(text=None):
 
 
 def main():
-    """ Given a string as argument, count the number of upper letters, lower
+    """Given a string as argument, count the number of upper letters, lower
     letters, punctuation marks, spaces and digits. If no string is provided,
     reads on stdin. In this case the final endline will unfortunatly be
     counted. This behavior can easily be avoided, but expected by the subject
-    :( Using assert for parsing in strongly advised AGAINST. assert should be
-    used only for debug. The subject disagree ;("""
+    :("""
+    
+    try:
+        if len(sys.argv) > 2:
+            raise AssertionError("to many arguments")
 
-    assert len(sys.argv) < 3, "to many arguments"
-
-    if len(sys.argv) == 1:
-        text_analyser(None)
-    else:
-        text_analyser(sys.argv[1])
+        if len(sys.argv) == 1:
+            text_analyser(None)
+        else:
+            text_analyser(sys.argv[1])
+    except AssertionError as msg:
+        print(msg)
 
 
 if __name__ == "__main__":
