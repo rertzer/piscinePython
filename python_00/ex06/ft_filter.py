@@ -1,7 +1,7 @@
-def ft_basic_filter(item):
+def default_fun(item):
     """
-    ft_basic_filter(item) --> boolean
-    Return True if item is True, False else
+    default_fun(item) -> boolean
+    return the boolean value of the item given as argument
     """
     return bool(item)
 
@@ -15,13 +15,10 @@ def ft_filter(func, iterable):
     that are true.
     """
 
-    try:
-        if func is None:
-            func = ft_basic_filter
-        filtered = []
-        for item in iterable:
-            if func(item):
-                filtered.append(item)
-    except Exception as e:
-        print(e)
+    if func is None:
+        func = default_fun
+    filtered = []
+    for item in iterable:
+        if func(item):
+            filtered.append(item)
     return iter(filtered)
