@@ -2,6 +2,12 @@ import sys
 
 
 def text_analyser(text=None):
+    """
+     Given a string as argument, count the number of upper letters, lower
+    letters, punctuation marks, spaces and digits. If no string is provided,
+    reads on stdin. In this case the final endline will unfortunatly be
+    counted.
+    """
     if not text:
         print("What is the text to count?")
         for line in sys.stdin:
@@ -35,12 +41,18 @@ def text_analyser(text=None):
 
 
 def main():
-    """Given a string as argument, count the number of upper letters, lower
+    """
+    Given a string as argument, count the number of upper letters, lower
     letters, punctuation marks, spaces and digits. If no string is provided,
     reads on stdin. In this case the final endline will unfortunatly be
-    counted. This behavior can easily be avoided, but expected by the subject
-    :("""
-    
+    counted.
+    Usage:
+    $ python3 whatis.py "this is my string"
+    or:
+    $ python3 whatis.py
+    > this is my string
+    """
+
     try:
         if len(sys.argv) > 2:
             raise AssertionError("to many arguments")
