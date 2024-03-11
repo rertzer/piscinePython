@@ -35,11 +35,11 @@ def main():
 
         print("The original one:")
         filtered = filter(vowel_func, string)
-        print(f"before: {numbers}\nafter:{list(filtered)}")
+        print(f"before: {string}\nafter:{list(filtered)}")
         print("ft_filter:")
         filtered = []
         filtered = ft.ft_filter(vowel_func, string)
-        print(f"before: {numbers}\nafter:{list(filtered)}")
+        print(f"before: {string}\nafter:{list(filtered)}")
 
         print("The original one:")
         filtered = filter(None, numbers)
