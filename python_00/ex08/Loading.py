@@ -9,8 +9,8 @@ def ft_tqdm(lst):
         i += 1
         progress = i / maxi * 100
         bar = ''
-        barsize = int(progress / 2)
-        for x in range(barsize):
+        bar_size = int(progress / 2)
+        for x in range(bar_size):
             bar += '='
         bar += '>'
         print("{:>3d}%|[{:<51}]| {:>3d}/{:>3d}".format(int(progress),

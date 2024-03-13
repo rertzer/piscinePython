@@ -31,7 +31,7 @@ def text_analyser(text=None):
             sp += 1
         elif x.isdigit():
             dg += 1
-        elif x in ('.', ',', ';', ':', '?', '!'):
+        elif x in ('.', ',', ';', ':', '?', '!', '-'):
             pu += 1
     print(up, " upper letters")
     print(lw, " lower letters")

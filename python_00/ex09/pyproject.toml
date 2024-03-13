@@ -1,3 +1,21 @@
 [build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name="ft_package"
+version="0.0.1"
+authors = [
+	{name="rertzer", email="rertzer@student.42.fr"},
+]
+description="A tiny useless package"
+readme="README.md"
+license="MIT"
+requires-python=">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+[project.urls]
+homepage="https://github.com/rertzer/piscinePython/python00/ex09"
