@@ -13,15 +13,16 @@ def ft_load(path: str):
         if not (img.format == "JPEG" or img.format == "JPG"):
             raise AssertionError("bad format: jpg or jpeg expected")
         img_array = np.array(img)
+        img.close()
         print(f"The shape of image is: {img_array.shape}")
         return img_array
 
     except IOError as msg:
-        print(msg)
+        print(f"IOError: {msg}")
     except UnidentifiedImageError as msg:
-        print(msg)
+        print(f"UnidentifiedImageError: {msg}")
     except AssertionError as msg:
-        print(msg)
+        print(f"AssertionError: {msg}")
 
 
 def main():

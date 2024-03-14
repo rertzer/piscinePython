@@ -9,6 +9,8 @@ def slice_me(family: list, start: int, end: int) -> list:
     try:
         if not isinstance(family, list):
             raise AssertionError("bad arguments: not a list")
+        if not all(isinstance(family[i], list) for i in range(len(family))):
+            raise AssertionError("bad arguments: not a list")
         if not isinstance(start, int) or not isinstance(end, int):
             raise AssertionError("bad arguments: not int")
         length = len(family[0])
@@ -30,6 +32,9 @@ def main():
               [1.88, 75.2]]
     print(slice_me(family, 0, 2))
     print(slice_me(family, 1, -2))
+    print(slice_me(family, 33, 42))
+    print(slice_me(family, 33, 'coconut'))
+    print(slice_me([[1, 2, 3], 1, 2], 'coconut', 0))
 
 
 if __name__ == "__main__":

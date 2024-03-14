@@ -17,12 +17,12 @@ def ft_load(path: str):
         return img_array
 
     except IOError as msg:
-        print(msg)
+        print(f"IOError: {msg}")
     except UnidentifiedImageError as msg:
-        print(msg)
+        print(f"UnidentifiedImageError: {msg}")
     except AssertionError as msg:
-        print(msg)
-
+        print(f"AssertionError: {msg}")
+    
 
 def main():
     print(ft_load("landscape.jpg"))

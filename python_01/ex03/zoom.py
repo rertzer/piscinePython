@@ -1,7 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from PIL import Image
-from PIL import UnidentifiedImageError
 from load_image import ft_load
 
 
@@ -17,12 +15,10 @@ def main():
         imgplot = plt.imshow(img, cmap='gray')
         plt.show()
 
-    except IOError as msg:
-        print(msg)
-    except UnidentifiedImageError as msg:
-        print(msg)
     except AssertionError as msg:
-        print(msg)
+        print(f"AssertionError: {msg}")
+    except Exception as msg:
+        print(f"Error: {msg}")
 
 
 if __name__ == "__main__":
