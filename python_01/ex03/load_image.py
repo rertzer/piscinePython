@@ -22,7 +22,7 @@ def ft_load(path: str):
         print(f"UnidentifiedImageError: {msg}")
     except AssertionError as msg:
         print(f"AssertionError: {msg}")
-    
+
 
 def main():
     print(ft_load("landscape.jpg"))
