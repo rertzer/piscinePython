@@ -4,6 +4,9 @@ from load_csv import load
 
 
 def main():
+    """
+    Display France life expectancy projections.
+    """
     try:
         data = load("life_expectancy_years.csv")
         data = data.set_index('country')
