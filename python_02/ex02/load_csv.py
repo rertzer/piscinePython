@@ -13,11 +13,3 @@ def load(path: str):
         return data
     except Exception as e:
         print(f"Loading Error: {e}")
-
-
-def main():
-    print(load("life_expectancy_years.csv"))
-
-
-if __name__ == "__main__":
-    main()

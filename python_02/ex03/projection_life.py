@@ -39,13 +39,6 @@ def main():
         ax.xaxis.set_major_formatter(FuncFormatter(kilo_formatter))
         ax.scatter(income, life_expectancy)
         plt.show()
-
-        """
-        ax.xaxis.set_major_locator(MultipleLocator(40))
-        ax.yaxis.set_major_locator(MultipleLocator(20))
-        ax.yaxis.set_major_formatter(FormatStrFormatter('%dM'))
-        ax.set_ylabel("Life expectancy")
-        """
     except Exception as e:
         print(f"Error: {e}")
 
