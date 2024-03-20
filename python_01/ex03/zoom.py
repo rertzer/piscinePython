@@ -6,6 +6,8 @@ def main():
 
     try:
         img = ft_load("animal.jpeg")
+        if img is None:
+            return
         print(img)
 
         img = img[100:500, 450:850, :1]

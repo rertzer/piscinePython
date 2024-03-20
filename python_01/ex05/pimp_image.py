@@ -70,6 +70,8 @@ def main():
     """
     try:
         array = ft_load("landscape.jpg")
+        if array is None:
+            return
         print(ft_invert.__doc__)
 
         fig, axs = plt.subplots(3, 2)

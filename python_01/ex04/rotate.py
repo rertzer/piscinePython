@@ -6,6 +6,8 @@ from load_image import ft_load
 def main():
     try:
         img = ft_load("animal.jpeg")
+        if img is None:
+            return
         img = img.reshape(400, 400)
         img = np.array([[img[i][j] for i in range(len(img))]
                        for j in range(len(img[0]))])
