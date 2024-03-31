@@ -1,48 +1,88 @@
 def ft_statistics(*args, **kwargs):
     """Calculate statistics on the args given as arguments."""
-    if "mean" in kwargs.values():
-        print(f"mean: {ft_mean(args)}")
-    if "median" in kwargs.values():
-        print(f"median: {ft_median(args)}")
-    if "quartile" in kwargs.values():
-        print(f"median: {ft_quartile(args)}")
+    for v in kwargs.values():
+        try:
+            if v == "mean":
+                print(f"mean: {ft_mean(args)}")
+            elif v == "median":
+                print(f"median: {ft_median(args)}")
+            elif v == "quartile":
+                print(f"quartile: {ft_quartile(args)}")
+            elif v == "std":
+                print(f"std: {ft_std(args)}")
+            elif v == "var":
+                print(f"var: {ft_var(args)}")
+        except AssertionError:
+            print("ERROR")
 
 
 def ft_mean(args):
     """Return the mean of the numbers given as arguments."""
     length = len(args)
-    mean = 0
-    if (length != 0):
-        args_sum = 0
-        for n in args:
-            args_sum += n
-        mean = args_sum / length
-    return mean
+    if length == 0:
+        raise AssertionError("ERROR")
+    args_sum = 0
+    for n in args:
+        args_sum += n
+    return args_sum / length
+
 
 def ft_median(args):
     """Return the mean of the numbers given as arguments."""
-    middle = int((len(args) + 1) / 2) - 1
+    length = len(args)
+    if length == 0:
+        raise AssertionError("ERROR")
+    middle = int((length + 1) / 2) - 1
     args = list(args)
     args.sort()
-    median = 0
-    if (middle != 0):
-        median = args[middle]
+    median = args[middle]
     return median
 
 
 def ft_quartile(args):
     """Return first and third quartile of the numbers given as arguments."""
-    
-    first = int((len(args) + 3) / 4) - 1
-    third = int((3 * len(args) + 1) / 4) - 1
+    length = len(args)
+    if length == 0:
+        raise AssertionError("ERROR")
+    first_middle = int((len(args) + 3) / 4) - 1
+    third_middle = int((3 * len(args) + 1) / 4) - 1
+    args = list(args)
+    args.sort()
+    first = float(args[first_middle])
+    third = float(args[third_middle])
+    return (first, third)
+
+
+def ft_std(args):
+    """Return the standard deviation of the numbers given as arguments."""
+    length = len(args)
+    if length == 0:
+        raise AssertionError("ERROR")
+    var = ft_var(args)
+    return var**(0.5)
+
+
+def ft_var(args):
+    """Return the variance of the numbers given as arguments."""
+    length = len(args)
+    if length == 0:
+        raise AssertionError("ERROR")
+    args_squares = 0
+    for n in args:
+        args_squares += n**2
+    var = args_squares / length
+    mean = ft_mean(args)
+    var -= mean**2
+    return var
 
 
 def main():
     """Main test."""
-    ft_statistics(toto="mean")
+    ft_statistics(1, 42, 360, 11, 64, pim="mean", pam="median", pum="quartile")
     print("--------------")
-    ft_statistics(1, 42, 360, 11, 64, toto="mean", tata="median", titi="quartile")
+    ft_statistics(5, 75, 450, 18, 597, 27474, 48575, hello="std", world="var")
     print("--------------")
+    ft_statistics(toto="mean", tutu="median", tata="quartile")
     print("--------------")
 
 
