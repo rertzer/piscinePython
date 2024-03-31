@@ -51,7 +51,7 @@ def main():
     print(Lyanna.__dict__)
     rickon = Stark(True, 'pouet')
     print(rickon.__dict__)
-    #hodor = Character("hodor")
+    # hodor = Character("hodor")
 
 
 if __name__ == "__main__":
