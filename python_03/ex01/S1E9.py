@@ -6,34 +6,25 @@ class Character(ABC):
     An abstract class for characters.
     """
     def __init__(self, first_name, is_alive=True):
-        """
-        create chararcter>
-        Parameters:
-            first_name (string)
-            is_alive (boolean, default=True)
-        """
+        """create chararcter>
+Parameters:
+    first_name (string)
+    is_alive (boolean, default=True)
+"""
         super().__init__()
         self.first_name = first_name
         self.is_alive = is_alive
 
     @abstractmethod
     def die(self):
-        """
-        Abstract method.
-        Supposed to kill someone.
-        """
+        """Abstract method. Supposed to kill someone."""
         pass
 
 
 class Stark(Character):
-    """
-    A class for the Stark family.
-    Inherit from Character.
-    """
+    """A class for the Stark family. Inherit from Character."""
     def die(self):
-        """
-        kill a Stark.
-        """
+        """kill a Stark."""
         self.is_alive = False
 
 

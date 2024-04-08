@@ -4,9 +4,7 @@ from S1E9 import Character
 class Baratheon(Character):
     """Representing the Baratheon family."""
     def __init__(self, first_name, is_alive=True):
-        """
-        Create a Baratheon family member
-        """
+        """Create a Baratheon family member"""
         super().__init__(first_name, is_alive)
         self.family_name = "Baratheon"
         self.eyes = "brown"
@@ -32,9 +30,7 @@ class Lannister(Character):
     """Representing the Lannister family."""
 
     def __init__(self, first_name, is_alive=True):
-        """
-        Create a Lannister family member
-        """
+        """Create a Lannister family member."""
         super().__init__(first_name, is_alive)
         self.family_name = "Lannister"
         self.eyes = "blue"

@@ -17,7 +17,8 @@ def load(path: str):
 
 def main():
     print(load("life_expectancy_years.csv"))
-    print(load("an_unlikely_toad.csc"))
+    print()
+    print(load("an_unlikely_toad.csv"))
 
 
 if __name__ == "__main__":
