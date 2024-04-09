@@ -4,12 +4,9 @@ from load_csv import load
 
 
 def main():
-    """
-    Displays the country information of France versus Germany.
-    """
+    """Displays the country information of France versus Germany."""
     try:
-        data = load("population_total.csv")
-        data = data.set_index('country')
+        data = load("population_total.csv").set_index('country')
         data = data.iloc[:, 0:251]
         data_france = data.loc['France']
         data_france = data_france.str.replace('M', '').astype('float')

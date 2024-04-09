@@ -8,8 +8,7 @@ def main():
     Display France life expectancy projections.
     """
     try:
-        data = load("life_expectancy_years.csv")
-        data = data.set_index('country')
+        data = load("life_expectancy_years.csv").set_index('country')
         data = data.loc['France']
         fig, ax = plt.subplots()
         ax.plot(data)

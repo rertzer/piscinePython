@@ -16,8 +16,7 @@ def load(path: str):
 
 
 def main():
-    print(load("life_expectancy_years.csv"))
-    print()
+    print(load("life_expectancy_years.csv"), end="\n\n")
     print(load("an_unlikely_toad.csv"))
 
 

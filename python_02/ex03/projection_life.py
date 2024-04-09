@@ -4,9 +4,7 @@ from load_csv import load
 
 
 def kilo_formatter(d, pos):
-    """
-    Formats values adding k for 10^3
-    """
+    """Formats values adding k for 10^3."""
     if d >= 1000:
         d /= 1000
         return '%dk' % d
@@ -15,21 +13,20 @@ def kilo_formatter(d, pos):
 
 
 def main():
-    """
-    Displays the projection of life expectancy of various contries
-    in relation to the gross national product of the year 1900.
-    """
+    """Displays the projection of life expectancy of various contries
+in relation to the gross national product of the year 1900.
+"""
     try:
         income = \
             load("income_per_person_gdppercapita_ppp_inflation_adjusted.csv")
-        income = income.set_index('country')
-        income = income["1900"]
+        income.set_index('country', inplace=True)
+        income = income.get("1900")
 
         life_expectancy = load("life_expectancy_years.csv")
-        life_expectancy = life_expectancy.set_index('country')
-        life_expectancy = life_expectancy["1900"]
+        life_expectancy.set_index('country', inplace=True)
+        life_expectancy = life_expectancy.get("1900")
 
-        fig, ax = plt.subplots()
+        _, ax = plt.subplots()
         ax.set_title("1900")
         ax.set_ylabel("Life Expectancy")
         ax.set_xlabel("Gross domestic product")
@@ -39,6 +36,7 @@ def main():
         ax.xaxis.set_major_formatter(FuncFormatter(kilo_formatter))
         ax.scatter(income, life_expectancy)
         plt.show()
+
     except Exception as e:
         print(f"Error: {e}")
 
