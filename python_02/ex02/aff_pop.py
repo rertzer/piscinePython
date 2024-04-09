@@ -11,7 +11,7 @@ def main():
         data_france = data.loc['France']
         data_france = data_france.str.replace('M', '').astype('float')
         data_germany = data.loc['Germany'].str.replace('M', '').astype('float')
-        fig, ax = plt.subplots(layout='constrained')
+        _, ax = plt.subplots(layout='constrained')
         ax.plot(data_france, label='France')
         ax.plot(data_germany, label='Germany')
         ax.set_title("Population Projections")
