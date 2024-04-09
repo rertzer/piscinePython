@@ -2,9 +2,8 @@ from abc import ABC, abstractmethod
 
 
 class Character(ABC):
-    """
-    An abstract class for characters.
-    """
+    """An abstract class for characters."""
+
     def __init__(self, first_name, is_alive=True):
         """create chararcter>
 Parameters:
@@ -23,12 +22,14 @@ Parameters:
 
 class Stark(Character):
     """A class for the Stark family. Inherit from Character."""
+
     def die(self):
         """kill a Stark."""
         self.is_alive = False
 
 
 def main():
+    """Main test."""
     Ned = Stark("Ned")
     print(Ned.__dict__)
     print(Ned.is_alive)
