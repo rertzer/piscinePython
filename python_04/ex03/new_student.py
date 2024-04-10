@@ -26,10 +26,15 @@ class Student:
 
 def main():
     """Main test."""
-    student = Student(name="Edward", surname="agle")
-    print(student)
-    student = Student(name="Edward", surname="agle", id="toto")
-    print(student)
+    try:
+        student = Student(name="Edward", surname="agle")
+        print(student, end="\n\n")
+        student = Student(name="Edward", surname="agle", id="toto")
+        print(student)
+    except TypeError as e:
+        print(f"TypeError: {e}")
+    except Exception as e:
+        print(f"Error: {e}")
 
 
 if __name__ == "__main__":

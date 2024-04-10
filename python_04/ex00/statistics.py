@@ -44,12 +44,12 @@ def ft_quartile(args):
     length = len(args)
     if length == 0:
         raise AssertionError("ERROR")
-    first_middle = int((len(args) + 3) / 4) - 1
-    third_middle = int((3 * len(args) + 1) / 4) - 1
+    first_pos = int((len(args) + 3) / 4) - 1
+    third_pos = int((3 * len(args) + 1) / 4) - 1
     args = list(args)
     args.sort()
-    first = float(args[first_middle])
-    third = float(args[third_middle])
+    first = float(args[first_pos])
+    third = float(args[third_pos])
     return (first, third)
 
 
